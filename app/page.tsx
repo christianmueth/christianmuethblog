@@ -1,12 +1,6 @@
 import Image from "next/image";
 import logo from "../muon_logo.png";
-import {
-  ecosystemPillars,
-  navigationLinks,
-  platformProof,
-  products,
-  researchAreas,
-} from "./siteContent";
+import { navigationLinks, platformProof, products } from "./siteContent";
 
 export default function Home() {
   return (
@@ -25,21 +19,21 @@ export default function Home() {
 
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">AI product ecosystem</p>
-            <h1>Building AI companions that help people think, learn, and create.</h1>
+            <p className="eyebrow">AI product company</p>
+            <h1>AI products for the robotics era.</h1>
             <p className="lede">
-              Muon Mechatronics is becoming a focused AI product company.
-              Across study tools, personal workspaces, creative software, and
-              finance assistants, the throughline is the same: AI that augments
-              human capability.
+              Muon Mechatronics builds AI software that helps people learn,
+              organize, create, and make better decisions. We design practical
+              digital companions with a robotics-era sensibility: clear,
+              capable, and built to do useful work.
             </p>
 
             <div className="cta-row">
               <a href="#products" className="primary-cta">
-                Explore products
+                View products
               </a>
-              <a href="/research" className="secondary-cta">
-                Read the research
+              <a href="mailto:muonmechatronics@gmail.com" className="secondary-cta">
+                Contact Muon
               </a>
             </div>
 
@@ -60,8 +54,8 @@ export default function Home() {
               />
             </div>
             <div className="status-panel">
-              <span>Parent brand</span>
-              <strong>Products for learning, organization, creativity, and life</strong>
+              <span>Focus</span>
+              <strong>AI companions for learning, work, creativity, and life</strong>
             </div>
           </div>
         </div>
@@ -70,7 +64,7 @@ export default function Home() {
       <section id="products" className="section-block">
         <div className="section-heading">
           <p className="eyebrow">Products</p>
-          <h2>AI products that help people learn, organize, create, and communicate.</h2>
+          <h2>Six products. One focus: useful AI software.</h2>
         </div>
 
         <div className="product-grid">
@@ -102,26 +96,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="vision" className="section-band">
-        <div className="section-heading compact">
-          <p className="eyebrow">Vision</p>
-          <h2>Muon is the holding company. The products are the stars.</h2>
-        </div>
-
-        <div className="pillar-grid">
-          {ecosystemPillars.map((item) => (
-            <article key={item.title} className="info-card pillar-card">
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="section-block">
         <div className="section-heading compact">
-          <p className="eyebrow">Shipped stack</p>
-          <h2>Real product work, not generic startup language.</h2>
+          <p className="eyebrow">What we do</p>
+          <h2>We ship AI products with real software underneath them.</h2>
         </div>
 
         <div className="stack-grid">
@@ -134,67 +112,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="research" className="section-block research-block">
-        <div className="section-heading compact">
-          <p className="eyebrow">Research</p>
-          <h2>A place for experiments, technical essays, and future-facing prototypes.</h2>
-        </div>
-
-        <div className="research-panel">
-          {researchAreas.map((item) => (
-            <article key={item.title} className="research-item">
-              <span className="bullet-glow" />
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="section-actions">
-          <a href="/research" className="secondary-cta">
-            Open research journal
-          </a>
-        </div>
-      </section>
-
-      <section className="section-block duo-grid">
-        <article id="about" className="info-card narrative-card">
-          <p className="eyebrow">About</p>
-          <h3>Muon Mechatronics is evolving from a general tech identity into a focused family of AI products.</h3>
-          <p>
-            The company story now starts with what has been shipped: AI tools
-            for studying, personal organization, music, images, video, and
-            finance. Each product stands on its own, but all of them belong to
-            the same idea of amplifying human intelligence.
-          </p>
-        </article>
-
-        <article id="updates" className="info-card narrative-card">
-          <p className="eyebrow">Updates</p>
-          <h3>Continuous progress should be visible.</h3>
-          <p>
-            Product launches, research notes, experiments, and platform
-            milestones belong here so visitors can see an ecosystem that keeps
-            moving instead of a static company brochure.
-          </p>
-          <div className="section-actions narrative-actions">
-            <a href="/updates" className="secondary-cta">
-              View updates
-            </a>
-          </div>
-        </article>
-      </section>
-
       <section id="contact" className="contact-panel">
         <div>
           <p className="eyebrow">Contact</p>
-          <h2>Talk to the team behind the ecosystem.</h2>
+          <h2>Build with an AI product company shaped by software and robotics.</h2>
           <p>
-            Muon Mechatronics now reads best as the parent brand for a growing
-            family of AI products. Reach out for product partnerships,
-            research conversations, or platform collaboration.
+            Reach out for product partnerships, applied AI collaboration, or
+            serious conversations about software that helps people do more.
           </p>
         </div>
 
