@@ -1,42 +1,12 @@
 import Image from "next/image";
 import logo from "../muon_logo.png";
-
-const solutionAreas = [
-  {
-    title: "Applied AI Systems",
-    text: "We turn AI capability into software that is production-shaped, measurable, and aligned to the actual work your team needs done.",
-  },
-  {
-    title: "Automation Architecture",
-    text: "From workflow orchestration to human-in-the-loop control surfaces, we design the stack that lets automation scale without becoming brittle.",
-  },
-  {
-    title: "Deployment Readiness",
-    text: "Every engagement is built for shipping: clear operating boundaries, observability, and infrastructure that can move cleanly to Vercel and beyond.",
-  },
-];
-
-const engagements = [
-  "AI copilots for internal operations and knowledge-heavy workflows",
-  "Custom retrieval, planning, and decision-support systems",
-  "Industrial and technical software interfaces with AI in the loop",
-  "Rapid product prototypes that can harden into production deployments",
-];
-
-const siblingSites = [
-  { name: "Currents-E", href: "https://currents-e.com" },
-  { name: "SmartArts-E", href: "https://smartarts-e.com" },
-  { name: "SmartMove-E", href: "https://smartmove-e.com" },
-  { name: "QuickStud-E", href: "https://quickstud-e.com" },
-  { name: "Mate-E", href: "https://mate-e.com" },
-  { name: "SingSong-E", href: "https://singsong-e.com" },
-];
-
-const deliveryPoints = [
-  "Strategy grounded in software reality, not slideware",
-  "Interfaces designed for operators, clients, and engineering teams",
-  "Deployable Next.js experiences with fast iteration on Vercel",
-];
+import {
+  ecosystemPillars,
+  navigationLinks,
+  platformProof,
+  products,
+  researchAreas,
+} from "./siteContent";
 
 export default function Home() {
   return (
@@ -44,33 +14,37 @@ export default function Home() {
       <section className="hero">
         <nav className="topbar">
           <span className="brand-mark">Muon Mechatronics</span>
-          <a href="#contact" className="nav-link">
-            Start a conversation
-          </a>
+          <div className="nav-links" aria-label="Primary navigation">
+            {navigationLinks.map((item) => (
+              <a key={item.href} href={item.href} className="nav-link">
+                {item.label}
+              </a>
+            ))}
+          </div>
         </nav>
 
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Muonmechatronics.com</p>
-            <h1>AI software solutions built for real operations.</h1>
+            <p className="eyebrow">AI product ecosystem</p>
+            <h1>Building AI companions that help people think, learn, and create.</h1>
             <p className="lede">
-              Muon Mechatronics helps companies design and ship AI-powered
-              software for automation, decision support, and technical
-              workflows. We focus on systems that can actually be deployed,
-              governed, and used under pressure.
+              Muon Mechatronics is becoming a focused AI product company.
+              Across study tools, personal workspaces, creative software, and
+              finance assistants, the throughline is the same: AI that augments
+              human capability.
             </p>
 
             <div className="cta-row">
-              <a href="#solutions" className="primary-cta">
-                Explore solutions
+              <a href="#products" className="primary-cta">
+                Explore products
               </a>
-              <a href="#contact" className="secondary-cta">
-                Discuss a project
+              <a href="/research" className="secondary-cta">
+                Read the research
               </a>
             </div>
 
-            <ul className="signal-list" aria-label="Delivery highlights">
-              {deliveryPoints.map((point) => (
+            <ul className="signal-list" aria-label="Platform highlights">
+              {platformProof.map((point) => (
                 <li key={point}>{point}</li>
               ))}
             </ul>
@@ -86,22 +60,57 @@ export default function Home() {
               />
             </div>
             <div className="status-panel">
-              <span>Core focus</span>
-              <strong>Operational AI that ships cleanly</strong>
+              <span>Parent brand</span>
+              <strong>Products for learning, organization, creativity, and life</strong>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="solutions" className="section-block">
+      <section id="products" className="section-block">
         <div className="section-heading">
-          <p className="eyebrow">What we build</p>
-          <h2>Software systems where AI is useful because the delivery is disciplined.</h2>
+          <p className="eyebrow">Products</p>
+          <h2>AI products that help people learn, organize, create, and communicate.</h2>
         </div>
 
-        <div className="card-grid">
-          {solutionAreas.map((item) => (
-            <article key={item.title} className="info-card">
+        <div className="product-grid">
+          {products.map((item) => (
+            <a
+              key={item.title}
+              href={item.href}
+              className={`info-card product-card accent-${item.accent}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="product-topline">
+                <span className="product-badge">{item.tagline}</span>
+                <span className="product-open">Open</span>
+              </div>
+              <div className="product-image-wrap">
+                <Image
+                  src={item.image}
+                  alt={`${item.title} brand artwork`}
+                  width={320}
+                  height={320}
+                  className="product-art"
+                />
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section id="vision" className="section-band">
+        <div className="section-heading compact">
+          <p className="eyebrow">Vision</p>
+          <h2>Muon is the holding company. The products are the stars.</h2>
+        </div>
+
+        <div className="pillar-grid">
+          {ecosystemPillars.map((item) => (
+            <article key={item.title} className="info-card pillar-card">
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
@@ -109,15 +118,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-band">
+      <section className="section-block">
         <div className="section-heading compact">
-          <p className="eyebrow">Typical engagements</p>
-          <h2>Built for companies that want AI integrated into the product or workflow, not bolted on afterward.</h2>
+          <p className="eyebrow">Shipped stack</p>
+          <h2>Real product work, not generic startup language.</h2>
         </div>
 
-        <div className="bullet-panel">
-          {engagements.map((item) => (
-            <div key={item} className="bullet-item">
+        <div className="stack-grid">
+          {platformProof.map((item) => (
+            <div key={item} className="bullet-item stack-item">
               <span className="bullet-glow" />
               <p>{item}</p>
             </div>
@@ -125,35 +134,67 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-block">
+      <section id="research" className="section-block research-block">
         <div className="section-heading compact">
-          <p className="eyebrow">Sibling websites</p>
-          <h2>Explore related software brands across the Muon network.</h2>
+          <p className="eyebrow">Research</p>
+          <h2>A place for experiments, technical essays, and future-facing prototypes.</h2>
         </div>
 
-        <div className="card-grid sibling-grid">
-          {siblingSites.map((site) => (
-            <a
-              key={site.href}
-              href={site.href}
-              className="info-card sibling-card"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <h3>{site.name}</h3>
-              <p>{site.href.replace("https://", "")}</p>
-            </a>
+        <div className="research-panel">
+          {researchAreas.map((item) => (
+            <article key={item.title} className="research-item">
+              <span className="bullet-glow" />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
           ))}
         </div>
+
+        <div className="section-actions">
+          <a href="/research" className="secondary-cta">
+            Open research journal
+          </a>
+        </div>
+      </section>
+
+      <section className="section-block duo-grid">
+        <article id="about" className="info-card narrative-card">
+          <p className="eyebrow">About</p>
+          <h3>Muon Mechatronics is evolving from a general tech identity into a focused family of AI products.</h3>
+          <p>
+            The company story now starts with what has been shipped: AI tools
+            for studying, personal organization, music, images, video, and
+            finance. Each product stands on its own, but all of them belong to
+            the same idea of amplifying human intelligence.
+          </p>
+        </article>
+
+        <article id="updates" className="info-card narrative-card">
+          <p className="eyebrow">Updates</p>
+          <h3>Continuous progress should be visible.</h3>
+          <p>
+            Product launches, research notes, experiments, and platform
+            milestones belong here so visitors can see an ecosystem that keeps
+            moving instead of a static company brochure.
+          </p>
+          <div className="section-actions narrative-actions">
+            <a href="/updates" className="secondary-cta">
+              View updates
+            </a>
+          </div>
+        </article>
       </section>
 
       <section id="contact" className="contact-panel">
         <div>
-          <p className="eyebrow">Next step</p>
-          <h2>Need an AI product surface, prototype, or deployable workflow?</h2>
+          <p className="eyebrow">Contact</p>
+          <h2>Talk to the team behind the ecosystem.</h2>
           <p>
-            Muon Mechatronics is positioned for focused software engagements
-            where clarity, speed, and deployment quality matter.
+            Muon Mechatronics now reads best as the parent brand for a growing
+            family of AI products. Reach out for product partnerships,
+            research conversations, or platform collaboration.
           </p>
         </div>
 

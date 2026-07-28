@@ -14,9 +14,9 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://muonmechatronics.com"),
-  title: "Muon Mechatronics | AI Software Solutions",
+  title: "Muon Mechatronics | AI Product Ecosystem",
   description:
-    "Muon Mechatronics designs AI software systems for operations, industrial workflows, and high-leverage automation.",
+    "Muon Mechatronics builds AI products for learning, organization, creativity, and everyday decision-making.",
   applicationName: "Muon Mechatronics",
   icons: {
     icon: "/icon.png",
@@ -25,15 +25,18 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Muon Mechatronics",
-    "AI software solutions",
-    "industrial AI",
-    "automation systems",
-    "machine intelligence",
+    "AI products",
+    "QuickStud-E",
+    "Mate-E",
+    "SingSong-E",
+    "SmartArts-E",
+    "SmartMove-E",
+    "Currents-E",
   ],
   openGraph: {
     title: "Muon Mechatronics",
     description:
-      "AI software solutions for industrial workflows, operations intelligence, and deployable automation.",
+      "A family of AI products designed to help people learn, think, create, and accomplish more.",
     url: "https://muonmechatronics.com",
     siteName: "Muon Mechatronics",
     type: "website",
@@ -42,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Muon Mechatronics",
     description:
-      "AI software solutions for industrial workflows, operations intelligence, and deployable automation.",
+      "A family of AI products designed to help people learn, think, create, and accomplish more.",
   },
 };
 
